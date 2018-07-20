@@ -1,0 +1,15 @@
+<main>
+    <div class="container images">
+        <div class="photo-list row">
+            <div class="col-md-3" *ngFor="let photo of images">
+                <div class="photo">
+                    <img src="{{ photo.photo }}" alt="" class="img-fluid">
+                    <button class="icon" (click)="vote(photo.id)"  [attr.disabled]="photo.like >= 10 ? '' : null">
+                        <i class="material-icons">thumb_up</i>
+                    </button>
+                    <span>{{ photo.like }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

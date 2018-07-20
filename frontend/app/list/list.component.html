@@ -1,0 +1,71 @@
+<main>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <span>Cортировать по: </span> 
+                <button class="btn btn-primary" (click)="orderBy('name')">Имени</button>
+                <button class="btn btn-primary" (click)="orderBy('surname')">Фамилии</button>
+                <button class="btn btn-primary" (click)="orderBy('birth')">Дате рождения</button>
+                <button class="btn btn-primary" (click)="orderBy('age')">Возрасту</button>
+                <button class="btn btn-danger right" (click)="clearOrderBy()">Сбросить сортировку</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 filters">
+                <span>Фильтровать по: </span>
+                <form class="filter-form" (ngSubmit)="usersFilter()">
+                    <input type="text" name="name" [(ngModel)]="filter_name" placeholder="Имя">
+                    <input type="text" name="surname" [(ngModel)]="filter_surname" placeholder="Фамилия">
+                    <button type="submit" class="btn btn-primary">Применить фильтр</button>
+                </form>
+                <button class="btn btn-danger" (click)="clearFilters()" style="float: right;">Сбросить фильтры</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <form class="user-form" (ngSubmit)="addUser()">
+                    <input type="text" name="name" [(ngModel)]="newUserName" placeholder="Имя" required>
+                    <input type="text" name="surname" [(ngModel)]="newUserSurname" placeholder="Фамилия" required>
+                    <input type="date" name="birth" [(ngModel)]="newUserBirth" placeholder="Дата рождения" required>
+                    <button type="submit" class="btn btn-primary">Добавить юзера</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="container">
+        <div class="right">
+            <button class="btn btn-success" (click)="exportData()">Скачать .xlsx </button>
+        </div>
+        <div class="users-list">
+            <div class="row">
+                <div class="col-md-3">
+                    <p>Имя</p>
+                </div>
+                <div class="col-md-4">
+                    <p>Фамилия</p>
+                </div>
+                <div class="col-md-1">
+                    <p>Возраст</p>
+                </div>
+                <div class="col-md-3">
+                    <p>Дата рождения</p>
+                </div>
+            </div>
+            <div class="user-item" *ngFor="let user of users" (click)="setUserId(user.id)" [routerLink]="['/detail']">
+                <div class="row">
+                    <p class="col-md-3">{{ user.name }}</p>
+                    <p class="col-md-4">{{ user.surname }}</p>
+                    <p class="col-md-1">{{ user.age }}</p>
+                    <p class="col-md-3">{{ user.birth }}</p>
+                    <div class="col-md-1">
+                        <button class="icon" (click)="deleteUser($event, user)">
+                            <i class="material-icons">delete</i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

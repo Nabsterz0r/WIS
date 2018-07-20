@@ -1,0 +1,7 @@
+*.pyc
+__pycache__/
+/venv/
+.idea/
+node_modules
+*.map
+*.xlsx

@@ -1,0 +1,70 @@
+.sort {
+    margin: 10px;
+}
+
+.sort li {
+    margin-left: 10px;
+}
+
+.sort .btn {
+    margin-left: 10px;
+}
+
+.users-list {
+    clear: both;
+}
+
+.users-list:first-child{
+    margin-top: 10px;
+}
+
+.users-list p {
+    margin: 0;
+}
+
+.user-item p{
+    display: inline;
+    margin: 0;
+}
+
+.user-item:hover {
+    background-color: rgba(0,0,0,.1);
+    cursor: pointer;
+}
+
+.user-item:not(:first-child) {
+    border-top: 1px solid rgba(0,0,0,.1);
+}
+
+.user-item {
+    border-top: 1px solid rgba(0,0,0,.1);
+}
+
+.user-item p:not(:last-child) {
+    border-right: 1px solid rgba(0,0,0,.1);
+}
+
+.filter-form {
+    margin-left: 10px;
+    display: inline;
+}
+
+.user_form {
+    margin: 0 auto;
+}
+
+.xlsx {
+    margin-right: 0;
+    margin-left: auto;
+    width: 134px;
+    cursor: pointer;
+}
+
+.right {
+    float: right;
+}
+
+.filters {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

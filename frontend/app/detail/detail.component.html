@@ -1,0 +1,21 @@
+<main>
+    <div class="container">
+        <div class="info">
+            <p>Имя: {{ user.name }}</p>
+            <p>Фамилия: {{ user.surname }}</p>
+            <p>Возраст: {{ user.age }}</p>
+            <p>Дата рождения: {{ user.birth }}</p>
+        </div>
+        <div class="images row">
+            <div class="image col-md-3" *ngFor="let photo of images">
+                <div class="photo">
+                    <img src="{{ photo.photo }}" alt="" class="img-fluid">
+                    <button class="icon" (click)="vote(photo.id)"  [attr.disabled]="photo.like >= 10 ? '' : null">
+                        <i class="material-icons">thumb_up</i>
+                    </button>
+                    <span>{{ photo.like }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

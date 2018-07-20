@@ -1,0 +1,9 @@
+<div class="container">
+    <h1>{{ title }}</h1>
+    <ul class="menu">
+        <li routerLinkActive="active"> <a [routerLink]="['/list']">Список пользователей</a></li>
+        <li routerLinkActive="active"> <a [routerLink]="['/photo']">Все фото</a></li>
+    </ul>
+</div>
+
+<router-outlet></router-outlet>
